@@ -43,7 +43,7 @@ def accion(x):
     S=0.0
     for i in range(N):
         #S+=0.5*m*(x[pbc(i+1,N-1)]-x[i])**2.0/a + 0.5*mu**2.0*x[i]**2.0*a                   # HO
-        S+=0.5*m*(x[pbc(i+1,N-1)]-x[i])/a + lam*(x[i]**2.0-f**2.0)**2.0*a                   # HA
+        S+=0.5*m*(x[pbc(i+1,N-1)]-x[i])/a + lam*(x[i]**2.0-f**2.0)**2.0*a                   # AO
 
     return S
 
@@ -63,7 +63,7 @@ def energ(x_2, x_4):
     Función que devuelve la energía a partir de las medias
     '''
     #e=mu**2.0*x_2                          #HO
-    e=-mu**2.0*x_2+3.0*lam*x_4                 #HA
+    e=-mu**2.0*x_2+3.0*lam*x_4                 #AO
     return e
 
 si=0
